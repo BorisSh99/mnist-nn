@@ -2,9 +2,9 @@ package org.example;
 
 import java.io.*;
 
-public class MnistUtils {
+public class MnistUtils2 {
 
-    public static MnistMatrix[] readData(String dataFilePath, String labelFilePath) throws IOException {
+    public static MnistDigitData[] readData(String dataFilePath, String labelFilePath) throws IOException {
 
         DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(dataFilePath)));
         int magicNumber = dataInputStream.readInt();
@@ -27,22 +27,21 @@ public class MnistUtils {
         assert labelMagicNumber == 2049; // Magic number for label data
         System.out.println("number of labels is: " + numberOfLabels);
 
-        MnistMatrix[] data = new MnistMatrix[numberOfItems];
+        MnistDigitData[] dataset = new MnistDigitData[numberOfItems];
 
         assert numberOfItems == numberOfLabels;
 
         for(int i = 0; i < numberOfItems; i++) {
-            MnistMatrix mnistMatrix = new MnistMatrix(nRows, nColumns);
-            mnistMatrix.setLabel(labelInputStream.readUnsignedByte());
-            for (int row = 0; row < nRows; row++) {
-                for (int column = 0; column < nColumns; column++) {
-                    mnistMatrix.setColorValue(row, column, dataInputStream.readUnsignedByte()/255.0);
-                }
+            MnistDigitData mnistDigitData = new MnistDigitData();
+            mnistDigitData.setLabel(labelInputStream.readUnsignedByte());
+            for (int pixelIndex = 0; pixelIndex < 784; pixelIndex++) {
+                mnistDigitData.setPixelValue(pixelIndex, dataInputStream.readUnsignedByte()/255.0);
             }
-            data[i] = mnistMatrix;
+
+            dataset[i] = mnistDigitData;
         }
         dataInputStream.close();
         labelInputStream.close();
-        return data;
+        return dataset;
     }
 }

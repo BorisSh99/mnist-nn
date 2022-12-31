@@ -2,7 +2,7 @@ package org.example;
 
 public class MnistMatrix {
 
-    private final int [][] data;
+    private final double [][] data;
 
     private final int nRows;
     private final int nColumns;
@@ -13,14 +13,14 @@ public class MnistMatrix {
         this.nRows = nRows;
         this.nColumns = nColumns;
 
-        data = new int[nRows][nColumns];
+        data = new double[nRows][nColumns];
     }
 
-    public int getColorValue(int row, int column) {
+    public double getColorValue(int row, int column) {
         return data[row][column];
     }
 
-    public void setColorValue(int row, int column, int value) {
+    public void setColorValue(int row, int column, double value) {
         data[row][column] = value;
     }
 
@@ -40,7 +40,7 @@ public class MnistMatrix {
         return nColumns;
     }
 
-    public int[][] getData() {
+    public double[][] getData() {
         return data;
     }
 }
