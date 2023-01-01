@@ -18,8 +18,6 @@ public class App {
         printMnistDigitData(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
         showDigit(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
 
-
-
 //        MnistMatrix[] trainMnistMatrixArray = MnistUtils.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
 //        printMnistMatrix(trainMnistMatrixArray[trainMnistMatrixArray.length - 2]);
 
@@ -63,6 +61,17 @@ public class App {
             System.out.println();
         }
     }
+//    private static void printMnistDigitData(MnistDigitData digitData) {
+//        System.out.println("label: " + digitData.getLabelMatrix());
+//        int pixelIndexCounter = -1;
+//        for (int row = 0; row < 28; row++) {
+//            for (int column = 0; column < 28; column++) {
+//                pixelIndexCounter++;
+//                System.out.print(digitData.getPixelValue(pixelIndexCounter) + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
     private static void printMnistMatrix(MnistMatrix matrix) {
         System.out.println("label: " + matrix.getLabel());
         for (int row = 0; row < matrix.getNumberOfRows(); row++ ) {
@@ -74,7 +83,7 @@ public class App {
     }
 
     public static void showDigit(MnistDigitData mnistDigitData) {
-        double[] pixelArray = mnistDigitData.getPixelArray();
+        double[][] pixelMatrix = mnistDigitData.getPixelMatrix();
         int width = 28;
         int height = 28;
 
@@ -82,7 +91,7 @@ public class App {
         WritableRaster raster = image.getRaster();
         for (int y = 0; y < width; y++) {
             for (int x = 0; x < height; x++) {
-                int value = (int) (pixelArray[y * height + x] * 255);
+                int value = (int) (pixelMatrix[y * height + x][0] * 255);
                 raster.setSample(x, y, 0, value);
             }
         }

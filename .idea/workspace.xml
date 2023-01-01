@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="MNIST digit data as double[]">
+    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="Show digit in swing-GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistDigitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistDigitData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +78,9 @@
       <workItem from="1672311901998" duration="13387000" />
       <workItem from="1672424214580" duration="3112000" />
       <workItem from="1672436320130" duration="1037000" />
-      <workItem from="1672474463487" duration="5138000" />
+      <workItem from="1672474463487" duration="8672000" />
+      <workItem from="1672499947714" duration="865000" />
+      <workItem from="1672582514166" duration="2293000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1672312190780</created>
@@ -99,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672479066655</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Show digit in swing-GUI">
+      <created>1672482616283</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672482616283</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +131,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Read MNIST data" />
     <MESSAGE value="MNIST digit data as double[]" />
-    <option name="LAST_COMMIT_MESSAGE" value="MNIST digit data as double[]" />
+    <MESSAGE value="Show digit in swing-GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show digit in swing-GUI" />
   </component>
 </project>
