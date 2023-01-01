@@ -1,5 +1,10 @@
 package org.example;
 
+import org.apache.commons.math3.analysis.function.Sigmoid;
+import org.apache.commons.math3.linear.MatrixUtils;
+import org.apache.commons.math3.linear.RealMatrix;
+import org.apache.commons.math3.linear.RealVector;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
@@ -32,9 +37,70 @@ public class App {
         double[][] bHO = generateBiasesMatrix(10);
 
         double learnRate = 0.01;
+        int nrCorrect = 0;
         int nEpochs = 3;
 
+        for (int epoch = 0; epoch < nEpochs; epoch++) {
+            for (MnistDigitData digitData : trainMnistDigitArray) {
+                // Forward propagation from input to hidden
+                double[][] hPre = addMatrices(bIH, multiplyMatrices(wIH, digitData.getPixelMatrix()));
+                double[][] h = sigmoidMatrix(hPre);
 
+                // Forward propagation from hidden to output
+                double[][] oPre = addMatrices(bHO, multiplyMatrices(wHO, h));
+                double[][] o = sigmoidMatrix(oPre);
+
+                // Cost / Error calculation
+
+                nrCorrect += rowOfMax(o) == rowOfMax(digitData.getLabelMatrix()) ? 1 : 0;
+
+
+            }
+        }
+
+
+    }
+
+    public static int rowOfMax(double[][] a) {
+        RealMatrix matrix = MatrixUtils.createRealMatrix(a);
+        int maxRow = -1;
+        double maxValue = Double.NEGATIVE_INFINITY;
+        for (int i = 0; i < matrix.getRowDimension(); i++) {
+            RealVector row = matrix.getRowVector(i);
+            int maxIndex = row.getMaxIndex();
+            double value = row.getEntry(maxIndex);
+            if (value > maxValue) {
+                maxValue = value;
+                maxRow = i;
+            }
+        }
+        return maxRow;
+    }
+
+    public static double[][] multiplyMatrices(double[][] a, double[][] b) {
+        RealMatrix m1 = MatrixUtils.createRealMatrix(a);
+        RealMatrix m2 = MatrixUtils.createRealMatrix(b);
+        RealMatrix result = m1.multiply(m2);
+        return result.getData();
+    }
+    public static double[][] addMatrices(double[][] a, double[][] b) {
+        RealMatrix m1 = MatrixUtils.createRealMatrix(a);
+        RealMatrix m2 = MatrixUtils.createRealMatrix(b);
+        RealMatrix result = m1.add(m2);
+        return result.getData();
+    }
+    public static double[][] sigmoidMatrix(double[][] a) {
+        Sigmoid sigmoid = new Sigmoid();
+        RealMatrix m = MatrixUtils.createRealMatrix(a);
+        int rows = m.getRowDimension();
+        int cols = m.getColumnDimension();
+        double[][] result = new double[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = sigmoid.value(m.getEntry(i, j));
+            }
+        }
+        return result;
     }
 
     public static double[][] generateWeightsMatrix(int toLayer, int fromLayer) {

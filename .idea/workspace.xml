@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="Show digit in swing-GUI">
+    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="MNIST digit data as a [784][1]-array">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistDigitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistDigitData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,20 +34,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Boris/Idea_Progs/mnistNN/src/main/java/org/example&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Boris/Idea_Progs/mnistNN/src/main/java/org/example"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Boris\Idea_Progs\mnistNN\src\main\java\org\example" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AppTest.maxAtRow">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="mnistNN" />
@@ -61,8 +69,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest.maxAtRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mnistNN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
+      <option name="METHOD_NAME" value="maxAtRow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.multiplyMatrices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mnistNN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
+      <option name="METHOD_NAME" value="multiplyMatrices" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.maxAtRow" />
+        <item itemvalue="JUnit.AppTest.multiplyMatrices" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -80,7 +122,7 @@
       <workItem from="1672436320130" duration="1037000" />
       <workItem from="1672474463487" duration="8672000" />
       <workItem from="1672499947714" duration="865000" />
-      <workItem from="1672582514166" duration="2293000" />
+      <workItem from="1672582514166" duration="13703000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1672312190780</created>
@@ -110,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672482616283</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="MNIST digit data as a [784][1]-array">
+      <created>1672586356863</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672586356863</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +181,7 @@
     <MESSAGE value="Read MNIST data" />
     <MESSAGE value="MNIST digit data as double[]" />
     <MESSAGE value="Show digit in swing-GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show digit in swing-GUI" />
+    <MESSAGE value="MNIST digit data as a [784][1]-array" />
+    <option name="LAST_COMMIT_MESSAGE" value="MNIST digit data as a [784][1]-array" />
   </component>
 </project>
