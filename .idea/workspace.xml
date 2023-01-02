@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="MNIST digit data as a [784][1]-array">
+    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="Error calculation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +32,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Boris/Idea_Progs/mnistNN/src/main/java/org/example"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Boris/Idea_Progs/mnistNN/src/main/java/org/example&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Boris\Idea_Progs\mnistNN\src\main\java\org\example" />
@@ -55,7 +53,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.maxAtRow">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="mnistNN" />
@@ -103,9 +101,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.AppTest.maxAtRow" />
         <item itemvalue="JUnit.AppTest.multiplyMatrices" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +120,8 @@
       <workItem from="1672436320130" duration="1037000" />
       <workItem from="1672474463487" duration="8672000" />
       <workItem from="1672499947714" duration="865000" />
-      <workItem from="1672582514166" duration="13703000" />
+      <workItem from="1672582514166" duration="14351000" />
+      <workItem from="1672671688692" duration="5745000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1672312190780</created>
@@ -159,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672586356863</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Error calculation">
+      <created>1672606264078</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672606264078</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +188,7 @@
     <MESSAGE value="MNIST digit data as double[]" />
     <MESSAGE value="Show digit in swing-GUI" />
     <MESSAGE value="MNIST digit data as a [784][1]-array" />
-    <option name="LAST_COMMIT_MESSAGE" value="MNIST digit data as a [784][1]-array" />
+    <MESSAGE value="Error calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error calculation" />
   </component>
 </project>
