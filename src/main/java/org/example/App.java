@@ -56,19 +56,22 @@ public class App {
 
                 // Backpropagation from output to hidden (cost function derivative)
 
-                double[][] deltaO = subtractMatrices(o, h);
+                double[][] deltaO = subtractMatrices(o, digitData.getLabelMatrix());
                 wHO = addMatrices(wHO, scalarMultiply(-learnRate, multiplyMatrices(deltaO, transposeMatrix(h))));
                 bHO = addMatrices(bHO, scalarMultiply(-learnRate, deltaO));
 
                 // Backpropagation from hidden to input (activation function derivative)
-                double[][] deltaH = multiplyMatrices(multiplyMatrices(transposeMatrix(wHO), deltaO), multiplyMatrices(h, scalarSubtract(1.0, h)));
+                double[][] deltaH = arrayMultiply(multiplyMatrices(transposeMatrix(wHO), deltaO), arrayMultiply(h, scalarSubtract(1.0, h)));
                 wIH = addMatrices(wIH, scalarMultiply(-learnRate, multiplyMatrices(deltaH, transposeMatrix(digitData.getPixelMatrix()))));
                 bIH = addMatrices(bIH, scalarMultiply(-learnRate, deltaH));
             }
 
             double acc = (nrCorrect / 60000.0) * 100;
-            System.out.printf("Acc: %.2f%%\n", Math.round(acc));
+            System.out.printf("Acc: %d%%\n", Math.round(acc));
+            nrCorrect = 0;
         }
+        System.out.println("That's it!");
+
 
 
     }
@@ -88,7 +91,15 @@ public class App {
         }
         return maxRow;
     }
-
+    public static double[][] arrayMultiply(double[][] a, double[][] b) {
+        double[][] result = new double[a.length][a[0].length];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                result[i][j] = a[i][j] * b[i][j];
+            }
+        }
+        return result;
+    }
     public static double[][] multiplyMatrices(double[][] a, double[][] b) {
         RealMatrix m1 = MatrixUtils.createRealMatrix(a);
         RealMatrix m2 = MatrixUtils.createRealMatrix(b);
@@ -112,6 +123,13 @@ public class App {
                 result[i][j] = v - m[i][j];
             }
         }
+//        for (int i = 0; i < result.length; i++) {
+//            for (int j = 0; j < result[i].length; j++) {
+//                System.out.print(" " + result[i][j]);
+//            }
+//            System.out.println();
+//        }
+//        System.out.println("--------------------------------------");
         return result;
     }
     public static double[][] addMatrices(double[][] a, double[][] b) {
@@ -137,13 +155,7 @@ public class App {
                 result[i][j] = sigmoid.value(m.getEntry(i, j));
             }
         }
-        for (int i = 0; i < result.length; i++) {
-            for (int j = 0; j < result[i].length; j++) {
-                System.out.print(" " + result[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println("--------------------------------------");
+
         return result;
     }
 
