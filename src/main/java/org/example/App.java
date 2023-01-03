@@ -40,6 +40,7 @@ public class App {
         int nrCorrect = 0;
         int nEpochs = 3;
 
+        System.out.println("Training started with " + nEpochs + " epochs");
         for (int epoch = 0; epoch < nEpochs; epoch++) {
             for (MnistDigitData digitData : trainMnistDigitArray) {
                 // Forward propagation from input to hidden
@@ -55,7 +56,6 @@ public class App {
                 nrCorrect += rowOfMax(o) == rowOfMax(digitData.getLabelMatrix()) ? 1 : 0;
 
                 // Backpropagation from output to hidden (cost function derivative)
-
                 double[][] deltaO = subtractMatrices(o, digitData.getLabelMatrix());
                 wHO = addMatrices(wHO, scalarMultiply(-learnRate, multiplyMatrices(deltaO, transposeMatrix(h))));
                 bHO = addMatrices(bHO, scalarMultiply(-learnRate, deltaO));
@@ -67,10 +67,28 @@ public class App {
             }
 
             double acc = (nrCorrect / 60000.0) * 100;
-            System.out.printf("Acc: %d%%\n", Math.round(acc));
+            System.out.printf("" + (epoch + 1) + " Epoch ended with an accuracy in relation to the training data: %d%%\n", Math.round(acc));
             nrCorrect = 0;
         }
-        System.out.println("That's it!");
+        System.out.println("---------------Training done!---------------");
+
+        MnistDigitData[] testMnistDigitArray = MnistUtils2.readData("src/main/resources/data/t10k-images.idx3-ubyte", "src/main/resources/data/t10k-labels.idx1-ubyte");
+        System.out.println("Testing started.");
+        for (MnistDigitData digitData : testMnistDigitArray) {
+            // Forward propagation from input to hidden
+            double[][] hPre = addMatrices(bIH, multiplyMatrices(wIH, digitData.getPixelMatrix()));
+            double[][] h = sigmoidMatrix(hPre);
+
+            // Forward propagation from hidden to output
+            double[][] oPre = addMatrices(bHO, multiplyMatrices(wHO, h));
+            double[][] o = sigmoidMatrix(oPre);
+
+            nrCorrect += rowOfMax(o) == rowOfMax(digitData.getLabelMatrix()) ? 1 : 0;
+        }
+        double acc = (nrCorrect / 10000.0) * 100;
+        System.out.printf("Accuracy in relation to the previously unseen testing data: %d%%\n", Math.round(acc));
+
+        System.out.println("---------------Testing done!---------------");
 
 
 

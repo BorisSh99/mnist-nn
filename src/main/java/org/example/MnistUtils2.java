@@ -5,27 +5,23 @@ import java.io.*;
 public class MnistUtils2 {
 
     public static MnistDigitData[] readData(String dataFilePath, String labelFilePath) throws IOException {
-
+        System.out.println("Started reading dataset...");
         DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(dataFilePath)));
         int magicNumber = dataInputStream.readInt();
         int numberOfItems = dataInputStream.readInt();
         int nRows = dataInputStream.readInt();
         int nColumns = dataInputStream.readInt();
 
-        System.out.println("magic number is " + magicNumber);
         assert magicNumber == 2051; // Magic number for digits data
-        System.out.println("number of items is " + numberOfItems);
-        System.out.println("number of rows is: " + nRows);
-        System.out.println("number of cols is: " + nColumns);
+        System.out.println("Number of items: " + numberOfItems);
         assert nRows == 28 && nColumns == 28;
 
         DataInputStream labelInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(labelFilePath)));
         int labelMagicNumber = labelInputStream.readInt();
         int numberOfLabels = labelInputStream.readInt();
 
-        System.out.println("labels magic number is: " + labelMagicNumber);
         assert labelMagicNumber == 2049; // Magic number for label data
-        System.out.println("number of labels is: " + numberOfLabels);
+        System.out.println("Number of labels is: " + numberOfLabels);
 
         MnistDigitData[] dataset = new MnistDigitData[numberOfItems];
 

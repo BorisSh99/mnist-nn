@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="Backpropagation (needs fix)">
+    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="First working version (needs testing)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,8 @@
       <workItem from="1672474463487" duration="8672000" />
       <workItem from="1672499947714" duration="865000" />
       <workItem from="1672582514166" duration="14351000" />
-      <workItem from="1672671688692" duration="9917000" />
+      <workItem from="1672671688692" duration="12146000" />
+      <workItem from="1672748039959" duration="4236000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1672312190780</created>
@@ -172,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672680189895</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="First working version (needs testing)">
+      <created>1672685039638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672685039638</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,14 +206,15 @@
     <MESSAGE value="MNIST digit data as a [784][1]-array" />
     <MESSAGE value="Error calculation" />
     <MESSAGE value="Backpropagation (needs fix)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Backpropagation (needs fix)" />
+    <MESSAGE value="First working version (needs testing)" />
+    <option name="LAST_COMMIT_MESSAGE" value="First working version (needs testing)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/App.java</url>
-          <line>64</line>
+          <line>63</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
