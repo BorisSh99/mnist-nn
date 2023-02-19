@@ -14,7 +14,6 @@ import java.util.Random;
 import javax.swing.*;
 
 public class App {
-
     public static final int UPSCALE_FACTOR = 16;
     public static void main(String[] args) throws IOException {
         // Read MNIST dataset
@@ -22,9 +21,6 @@ public class App {
         MnistDigitData[] trainMnistDigitArray = MnistUtils2.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
         printMnistDigitData(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
         showDigit(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
-
-//        MnistMatrix[] trainMnistMatrixArray = MnistUtils.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
-//        printMnistMatrix(trainMnistMatrixArray[trainMnistMatrixArray.length - 2]);
 
         // Weights from input to hidden layer
         double[][] wIH = generateWeightsMatrix(20, 784);
@@ -40,7 +36,7 @@ public class App {
         int nrCorrect = 0;
         int nEpochs = 3;
 
-        System.out.println("Training started with " + nEpochs + " epochs");
+        System.out.println("Training started with " + nEpochs + " epochs (can last up to 3 minutes)...");
         for (int epoch = 0; epoch < nEpochs; epoch++) {
             for (MnistDigitData digitData : trainMnistDigitArray) {
                 // Forward propagation from input to hidden
@@ -89,9 +85,6 @@ public class App {
         System.out.printf("Accuracy in relation to the previously unseen testing data: %d%%\n", Math.round(acc));
 
         System.out.println("---------------Testing done!---------------");
-
-
-
     }
 
     public static int rowOfMax(double[][] a) {
@@ -141,13 +134,6 @@ public class App {
                 result[i][j] = v - m[i][j];
             }
         }
-//        for (int i = 0; i < result.length; i++) {
-//            for (int j = 0; j < result[i].length; j++) {
-//                System.out.print(" " + result[i][j]);
-//            }
-//            System.out.println();
-//        }
-//        System.out.println("--------------------------------------");
         return result;
     }
     public static double[][] addMatrices(double[][] a, double[][] b) {
@@ -173,10 +159,8 @@ public class App {
                 result[i][j] = sigmoid.value(m.getEntry(i, j));
             }
         }
-
         return result;
     }
-
     public static double[][] generateWeightsMatrix(int toLayer, int fromLayer) {
         Random random = new Random();
         double[][] weightsFromTo = new double[toLayer][fromLayer];
@@ -201,17 +185,6 @@ public class App {
             System.out.println();
         }
     }
-//    private static void printMnistDigitData(MnistDigitData digitData) {
-//        System.out.println("label: " + digitData.getLabelMatrix());
-//        int pixelIndexCounter = -1;
-//        for (int row = 0; row < 28; row++) {
-//            for (int column = 0; column < 28; column++) {
-//                pixelIndexCounter++;
-//                System.out.print(digitData.getPixelValue(pixelIndexCounter) + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
     private static void printMnistMatrix(MnistMatrix matrix) {
         System.out.println("label: " + matrix.getLabel());
         for (int row = 0; row < matrix.getNumberOfRows(); row++ ) {
@@ -221,7 +194,6 @@ public class App {
             System.out.println();
         }
     }
-
     public static void showDigit(MnistDigitData mnistDigitData) {
         double[][] pixelMatrix = mnistDigitData.getPixelMatrix();
         int width = 28;

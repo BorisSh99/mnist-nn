@@ -4,57 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="First working version (needs testing)">
+    <list default="true" id="770ab938-031c-4b03-82db-ff0cbb9c7fde" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2JaMlt6gxUGrUZHXLzij28oMkxF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2LYhnSfpVKZ5wIoYV7U15TiJO5a" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Boris/Idea_Progs/mnistNN/src/main/java/org/example&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Boris\Idea_Progs\mnistNN\src\main\java\org\example" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="org.example" />
-    </key>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="mnistNN" />
@@ -68,156 +48,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.maxAtRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mnistNN" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="maxAtRow" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTest.multiplyMatrices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mnistNN" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="multiplyMatrices" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.AppTest.maxAtRow" />
-        <item itemvalue="JUnit.AppTest.multiplyMatrices" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6636d9ec-add6-4633-9214-6c5771f7ef01" name="Changes" comment="" />
-      <created>1672311898651</created>
+      <changelist id="770ab938-031c-4b03-82db-ff0cbb9c7fde" name="Changes" comment="" />
+      <created>1676054093054</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1672311898651</updated>
-      <workItem from="1672311901998" duration="13387000" />
-      <workItem from="1672424214580" duration="3112000" />
-      <workItem from="1672436320130" duration="1037000" />
-      <workItem from="1672474463487" duration="8672000" />
-      <workItem from="1672499947714" duration="865000" />
-      <workItem from="1672582514166" duration="14351000" />
-      <workItem from="1672671688692" duration="12146000" />
-      <workItem from="1672748039959" duration="4236000" />
+      <updated>1676054093054</updated>
+      <workItem from="1676054095057" duration="646000" />
+      <workItem from="1676137109371" duration="2014000" />
+      <workItem from="1676204337799" duration="5168000" />
+      <workItem from="1676292701700" duration="864000" />
+      <workItem from="1676656372683" duration="1522000" />
+      <workItem from="1676751998920" duration="376000" />
+      <workItem from="1676809021957" duration="440000" />
     </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1672312190780</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1672312190780</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Read MNIST data">
-      <created>1672424789156</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1672424789156</updated>
-    </task>
-    <task id="LOCAL-00003" summary="MNIST digit data as double[]">
-      <created>1672479066655</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1672479066655</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Show digit in swing-GUI">
-      <created>1672482616283</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1672482616283</updated>
-    </task>
-    <task id="LOCAL-00005" summary="MNIST digit data as a [784][1]-array">
-      <created>1672586356863</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1672586356863</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Error calculation">
-      <created>1672606264078</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1672606264078</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Backpropagation (needs fix)">
-      <created>1672680189895</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1672680189895</updated>
-    </task>
-    <task id="LOCAL-00008" summary="First working version (needs testing)">
-      <created>1672685039638</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672685039638</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit" />
-    <MESSAGE value="Read MNIST data" />
-    <MESSAGE value="MNIST digit data as double[]" />
-    <MESSAGE value="Show digit in swing-GUI" />
-    <MESSAGE value="MNIST digit data as a [784][1]-array" />
-    <MESSAGE value="Error calculation" />
-    <MESSAGE value="Backpropagation (needs fix)" />
-    <MESSAGE value="First working version (needs testing)" />
-    <option name="LAST_COMMIT_MESSAGE" value="First working version (needs testing)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/App.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
