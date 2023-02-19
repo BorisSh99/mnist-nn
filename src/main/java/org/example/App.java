@@ -18,7 +18,7 @@ public class App {
     public static void main(String[] args) throws IOException {
         // Read MNIST dataset
         // x = 0; y = 0 means the upper left corner of the matrix
-        MnistDigitData[] trainMnistDigitArray = MnistUtils2.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
+        MnistDigitData[] trainMnistDigitArray = MnistUtils.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
         printMnistDigitData(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
         showDigit(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
 
@@ -33,6 +33,7 @@ public class App {
         double[][] bHO = generateBiasesMatrix(10);
 
         double learnRate = 0.01;
+        double cost = 0.0;
         int nrCorrect = 0;
         int nEpochs = 3;
 
@@ -48,7 +49,12 @@ public class App {
                 double[][] o = sigmoidMatrix(oPre);
 
                 // Cost / Error calculation
-
+                double[][] subtractedOutput = subtractMatrices(o, normalizeOutput(o));
+                double sum = 0.0;
+                for (int i = 0; i < subtractedOutput.length; i++) {
+                    sum += Math.pow(subtractedOutput[i][0], 2);
+                }
+                cost = sum / o.length;
                 nrCorrect += rowOfMax(o) == rowOfMax(digitData.getLabelMatrix()) ? 1 : 0;
 
                 // Backpropagation from output to hidden (cost function derivative)
@@ -68,7 +74,7 @@ public class App {
         }
         System.out.println("---------------Training done!---------------");
 
-        MnistDigitData[] testMnistDigitArray = MnistUtils2.readData("src/main/resources/data/t10k-images.idx3-ubyte", "src/main/resources/data/t10k-labels.idx1-ubyte");
+        MnistDigitData[] testMnistDigitArray = MnistUtils.readData("src/main/resources/data/t10k-images.idx3-ubyte", "src/main/resources/data/t10k-labels.idx1-ubyte");
         System.out.println("Testing started.");
         for (MnistDigitData digitData : testMnistDigitArray) {
             // Forward propagation from input to hidden
@@ -86,7 +92,12 @@ public class App {
 
         System.out.println("---------------Testing done!---------------");
     }
-
+    public static double[][] normalizeOutput(double[][] output) {
+        double[][] result = new double[output.length][output[0].length];
+        int maxRow = rowOfMax(output);
+        result[maxRow][0] = 1.0;
+        return result;
+    }
     public static int rowOfMax(double[][] a) {
         RealMatrix matrix = MatrixUtils.createRealMatrix(a);
         int maxRow = -1;
