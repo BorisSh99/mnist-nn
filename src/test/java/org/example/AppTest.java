@@ -25,7 +25,7 @@ public class AppTest {
                                 {0.2128},
                                 {0.618}};
 
-        double[][] actual = App.multiplyMatrices(a, b);
+        double[][] actual = MnistNN.multiplyMatrices(a, b);
 //        Assertions.assertEquals(expected[0][0], actual[0][0]);
         for (int i = 0; i < actual.length; i++) {
             for (int j = 0; j < actual[i].length; j++) {
@@ -38,6 +38,6 @@ public class AppTest {
     @Test
     public void rowOfMax() {
         double[][] arr = {{1.2, 2.3, 3.4}, {4.5, 10.6, 6.7}, {7.8, 8.9, 9.1}};
-        Assertions.assertEquals(1, App.rowOfMax(arr));
+        Assertions.assertEquals(1, MnistNN.rowOfMax(arr));
     }
 }
