@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770ab938-031c-4b03-82db-ff0cbb9c7fde" name="Changes" comment="GUI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistNN.java" afterDir="false" />
+    <list default="true" id="770ab938-031c-4b03-82db-ff0cbb9c7fde" name="Changes" comment="Simulation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MnistUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,7 @@
       <workItem from="1676751998920" duration="376000" />
       <workItem from="1676809021957" duration="4233000" />
       <workItem from="1676830626823" duration="2074000" />
-      <workItem from="1676911755263" duration="6568000" />
+      <workItem from="1676911755263" duration="6937000" />
     </task>
     <task id="LOCAL-00001" summary="Small changes">
       <created>1676809688410</created>
@@ -107,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676918812159</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Simulation">
+      <created>1676921734071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676921734071</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +135,7 @@
     <MESSAGE value="Quadratic cost function" />
     <MESSAGE value="Refactoring output" />
     <MESSAGE value="GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
+    <MESSAGE value="Simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simulation" />
   </component>
 </project>
