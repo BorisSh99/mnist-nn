@@ -5,22 +5,17 @@ import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.WritableRaster;
 import java.io.IOException;
 import java.util.Random;
 
-import javax.swing.*;
-
 public class App {
-    public static final int UPSCALE_FACTOR = 16;
+
     public static void main(String[] args) throws IOException {
         // Read MNIST dataset
         // x = 0; y = 0 means the upper left corner of the matrix
         MnistDigitData[] trainMnistDigitArray = MnistUtils.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
-        printMnistDigitData(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
-        showDigit(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
+        GUI gui = new GUI();
+        gui.showDigit(trainMnistDigitArray[trainMnistDigitArray.length - 2]);
 
         // Weights from input to hidden layer
         double[][] wIH = generateWeightsMatrix(20, 784);
@@ -70,6 +65,7 @@ public class App {
             double acc = (nrCorrect / 60000.0) * 100;
             System.out.printf("" + (epoch + 1) + " Epoch ended with an accuracy in relation to the training data: %.2f%%\n", acc);
             nrCorrect = 0;
+            gui.showDigit(trainMnistDigitArray[trainMnistDigitArray.length - epoch - 3]);
         }
         System.out.println("---------------Training done!---------------");
 
@@ -203,36 +199,5 @@ public class App {
             }
             System.out.println();
         }
-    }
-    public static void showDigit(MnistDigitData mnistDigitData) {
-        double[][] pixelMatrix = mnistDigitData.getPixelMatrix();
-        int width = 28;
-        int height = 28;
-
-        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
-        WritableRaster raster = image.getRaster();
-        for (int y = 0; y < width; y++) {
-            for (int x = 0; x < height; x++) {
-                int value = (int) (pixelMatrix[y * height + x][0] * 255);
-                raster.setSample(x, y, 0, value);
-            }
-        }
-
-        int scaledWidth = width * UPSCALE_FACTOR;
-        int scaledHeight = height * UPSCALE_FACTOR;
-
-        BufferedImage scaledImage = new BufferedImage(scaledWidth, scaledHeight, BufferedImage.TYPE_BYTE_GRAY);
-
-        Graphics2D g = scaledImage.createGraphics();
-        g.drawImage(image, 0, 0, scaledWidth, scaledHeight, null);
-        g.dispose();
-
-        ImageIcon icon = new ImageIcon(scaledImage);
-        JLabel label = new JLabel(icon);
-        JFrame frame = new JFrame();
-        frame.add(label);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
     }
 }
