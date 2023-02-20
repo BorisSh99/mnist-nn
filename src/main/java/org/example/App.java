@@ -48,7 +48,6 @@ public class App {
                 double[][] oPre = addMatrices(bHO, multiplyMatrices(wHO, h));
                 double[][] o = sigmoidMatrix(oPre);
 
-                // Cost / Error calculation
                 double[][] subtractedOutput = subtractMatrices(o, normalizeOutput(o));
                 double sum = 0.0;
                 for (int i = 0; i < subtractedOutput.length; i++) {
@@ -69,13 +68,13 @@ public class App {
             }
 
             double acc = (nrCorrect / 60000.0) * 100;
-            System.out.printf("" + (epoch + 1) + " Epoch ended with an accuracy in relation to the training data: %d%%\n", Math.round(acc));
+            System.out.printf("" + (epoch + 1) + " Epoch ended with an accuracy in relation to the training data: %.2f%%\n", acc);
             nrCorrect = 0;
         }
         System.out.println("---------------Training done!---------------");
 
         MnistDigitData[] testMnistDigitArray = MnistUtils.readData("src/main/resources/data/t10k-images.idx3-ubyte", "src/main/resources/data/t10k-labels.idx1-ubyte");
-        System.out.println("Testing started.");
+        System.out.println("Testing started...");
         for (MnistDigitData digitData : testMnistDigitArray) {
             // Forward propagation from input to hidden
             double[][] hPre = addMatrices(bIH, multiplyMatrices(wIH, digitData.getPixelMatrix()));
@@ -88,7 +87,7 @@ public class App {
             nrCorrect += rowOfMax(o) == rowOfMax(digitData.getLabelMatrix()) ? 1 : 0;
         }
         double acc = (nrCorrect / 10000.0) * 100;
-        System.out.printf("Accuracy in relation to the previously unseen testing data: %d%%\n", Math.round(acc));
+        System.out.printf("Accuracy in relation to the previously unseen testing data: %.2f%%\n", acc);
 
         System.out.println("---------------Testing done!---------------");
     }
