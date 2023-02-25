@@ -16,7 +16,8 @@ public class App {
         mnistNN.test();
 
         System.out.println();
-        System.out.println("Now you can try it! You can enter an index of a digit from testing data array (e.g. 0 is an index of digit 7 and 9999 is an index of digit 6)");
+        System.out.println("Now you can try it! You can enter an index of a digit from testing dataset");
+        System.out.println("(e.g. 0 is the index of digit 7 and 9999 is the index of digit 6)");
         System.out.println();
         GUI gui = new GUI();
 

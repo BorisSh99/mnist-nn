@@ -60,12 +60,12 @@ public class MnistNN {
                 cost = sum / o.length;
                 nrCorrect += rowOfMax(o) == rowOfMax(digitData.getLabelMatrix()) ? 1 : 0;
 
-                // Backpropagation from output to hidden (cost function derivative)
+                // Backpropagation from output to hidden
                 double[][] deltaO = subtractMatrices(o, digitData.getLabelMatrix());
                 wHO = addMatrices(wHO, scalarMultiply(-learnRate, multiplyMatrices(deltaO, transposeMatrix(h))));
                 bHO = addMatrices(bHO, scalarMultiply(-learnRate, deltaO));
 
-                // Backpropagation from hidden to input (activation function derivative)
+                // Backpropagation from hidden to input
                 double[][] deltaH = arrayMultiply(multiplyMatrices(transposeMatrix(wHO), deltaO), arrayMultiply(h, scalarSubtract(1.0, h)));
                 wIH = addMatrices(wIH, scalarMultiply(-learnRate, multiplyMatrices(deltaH, transposeMatrix(digitData.getPixelMatrix()))));
                 bIH = addMatrices(bIH, scalarMultiply(-learnRate, deltaH));
