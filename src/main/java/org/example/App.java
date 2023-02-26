@@ -11,7 +11,7 @@ public class App {
         MnistDigitData[] trainMnistDigitArray = MnistUtils.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
         MnistDigitData[] testMnistDigitArray = MnistUtils.readData("src/main/resources/data/t10k-images.idx3-ubyte", "src/main/resources/data/t10k-labels.idx1-ubyte");
 
-        MnistNN mnistNN = new MnistNN(trainMnistDigitArray, testMnistDigitArray, 20);
+        MnistNN mnistNN = new MnistNN(trainMnistDigitArray, testMnistDigitArray, 50, 5);
         mnistNN.train();
         mnistNN.test();
 

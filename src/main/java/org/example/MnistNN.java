@@ -25,7 +25,7 @@ public class MnistNN {
     private int nrCorrect;
     private double cost;
 
-    public MnistNN(MnistDigitData[] trainMnistDigitArray, MnistDigitData[] testMnistDigitArray, int nHiddenNeurons) {
+    public MnistNN(MnistDigitData[] trainMnistDigitArray, MnistDigitData[] testMnistDigitArray, int nHiddenNeurons, int nEpochs) {
         this.trainMnistDigitArray = trainMnistDigitArray;
         this.testMnistDigitArray = testMnistDigitArray;
 
@@ -35,13 +35,13 @@ public class MnistNN {
         bHO = generateBiasesMatrix(10);
 
         learnRate = 0.01;
-        nEpochs = 3;
+        this.nEpochs = nEpochs;
         nrCorrect = 0;
         cost = 0.0;
     }
 
     public void train() {
-        System.out.println("Training started with " + nEpochs + " epochs (it can last up to 3 minutes)...");
+        System.out.println("Training started with " + nEpochs + " epochs (it can last up to 5 minutes)...");
         for (int epoch = 0; epoch < nEpochs; epoch++) {
             for (MnistDigitData digitData : trainMnistDigitArray) {
                 // Forward propagation from input to hidden
