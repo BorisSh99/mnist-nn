@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class App {
 
@@ -11,8 +12,17 @@ public class App {
         MnistDigitData[] trainMnistDigitArray = MnistUtils.readData("src/main/resources/data/train-images.idx3-ubyte", "src/main/resources/data/train-labels.idx1-ubyte");
         MnistDigitData[] testMnistDigitArray = MnistUtils.readData("src/main/resources/data/t10k-images.idx3-ubyte", "src/main/resources/data/t10k-labels.idx1-ubyte");
 
-        MnistNN mnistNN = new MnistNN(trainMnistDigitArray, testMnistDigitArray, 20);
+        MnistNN mnistNN = new MnistNN(trainMnistDigitArray, testMnistDigitArray, 50, 5);
+        long startTrainMillis = System.currentTimeMillis();
         mnistNN.train();
+        long endTrainMillis = System.currentTimeMillis();
+        long diff = endTrainMillis-startTrainMillis;
+        System.out.println("Training has lasted for " +
+                String.format("%d min, %d sec",
+                TimeUnit.MILLISECONDS.toMinutes(diff),
+                TimeUnit.MILLISECONDS.toSeconds(diff) -
+                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff))
+        ));
         mnistNN.test();
 
         System.out.println();

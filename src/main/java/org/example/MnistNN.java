@@ -6,6 +6,7 @@ import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class MnistNN {
 
@@ -25,7 +26,7 @@ public class MnistNN {
     private int nrCorrect;
     private double cost;
 
-    public MnistNN(MnistDigitData[] trainMnistDigitArray, MnistDigitData[] testMnistDigitArray, int nHiddenNeurons) {
+    public MnistNN(MnistDigitData[] trainMnistDigitArray, MnistDigitData[] testMnistDigitArray, int nHiddenNeurons, int nEpochs) {
         this.trainMnistDigitArray = trainMnistDigitArray;
         this.testMnistDigitArray = testMnistDigitArray;
 
@@ -35,14 +36,15 @@ public class MnistNN {
         bHO = generateBiasesMatrix(10);
 
         learnRate = 0.01;
-        nEpochs = 3;
+        this.nEpochs = nEpochs;
         nrCorrect = 0;
         cost = 0.0;
     }
 
     public void train() {
-        System.out.println("Training started with " + nEpochs + " epochs (it can last up to 3 minutes)...");
+        System.out.println("Training started with " + nEpochs + " epochs (it can last up to 5 minutes)...");
         for (int epoch = 0; epoch < nEpochs; epoch++) {
+            long startTrainMillis = System.currentTimeMillis();
             for (MnistDigitData digitData : trainMnistDigitArray) {
                 // Forward propagation from input to hidden
                 double[][] hPre = addMatrices(bIH, multiplyMatrices(wIH, digitData.getPixelMatrix()));
@@ -70,9 +72,16 @@ public class MnistNN {
                 wIH = addMatrices(wIH, scalarMultiply(-learnRate, multiplyMatrices(deltaH, transposeMatrix(digitData.getPixelMatrix()))));
                 bIH = addMatrices(bIH, scalarMultiply(-learnRate, deltaH));
             }
+            long endTrainMillis = System.currentTimeMillis();
+            long diff = endTrainMillis-startTrainMillis;
 
             double acc = (nrCorrect / 60000.0) * 100;
             System.out.printf("" + (epoch + 1) + " Epoch ended with an accuracy in relation to the training data: %.2f%%\n", acc);
+            System.out.println("and has lasted for " + String.format("%d min, %d sec",
+                    TimeUnit.MILLISECONDS.toMinutes(diff),
+                    TimeUnit.MILLISECONDS.toSeconds(diff) -
+                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff))
+            ));
             nrCorrect = 0;
         }
         System.out.println("---------------Training done!---------------");
