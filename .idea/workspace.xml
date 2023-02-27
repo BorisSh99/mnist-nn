@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770ab938-031c-4b03-82db-ff0cbb9c7fde" name="Changes" comment="Small refactoring">
+    <list default="true" id="770ab938-031c-4b03-82db-ff0cbb9c7fde" name="Changes" comment="nEpochs as a parameter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +20,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="testing" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="2LYhnSfpVKZ5wIoYV7U15TiJO5a" />
   <component name="ProjectViewState">
@@ -39,7 +44,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.AppTest">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="mnistNN" />
@@ -70,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest" />
       </list>
     </recent_temporary>
   </component>
@@ -94,6 +99,11 @@
       <workItem from="1676911755263" duration="6937000" />
       <workItem from="1676922388600" duration="212000" />
       <workItem from="1677329428832" duration="3368000" />
+      <workItem from="1677517107620" duration="44000" />
+      <workItem from="1677519719335" duration="590000" />
+      <workItem from="1677525474006" duration="9000" />
+      <workItem from="1677525504426" duration="1000" />
+      <workItem from="1677525982857" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="Small changes">
       <created>1676809688410</created>
